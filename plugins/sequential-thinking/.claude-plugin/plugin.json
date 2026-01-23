@@ -1,0 +1,11 @@
+{
+  "name": "sequential-thinking",
+  "version": "1.0.0",
+  "description": "Step-by-step thinking process for complex problem-solving",
+  "author": {
+    "name": "Harry"
+  },
+  "license": "MIT",
+  "keywords": ["thinking", "reasoning", "problem-solving", "mcp"],
+  "mcpServers": "./.mcp.json"
+}

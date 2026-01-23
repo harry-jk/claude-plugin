@@ -17,6 +17,14 @@
       "version": "1.0.0",
       "keywords": ["exa", "search", "mcp", "web-search", "research"],
       "category": "search"
+    },
+    {
+      "name": "sequential-thinking",
+      "source": "./plugins/sequential-thinking",
+      "description": "Step-by-step thinking process for complex problem-solving",
+      "version": "1.0.0",
+      "keywords": ["thinking", "reasoning", "problem-solving", "mcp"],
+      "category": "reasoning"
     }
   ]
 }
