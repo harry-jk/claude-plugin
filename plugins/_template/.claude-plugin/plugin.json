@@ -1,0 +1,16 @@
+{
+  "name": "plugin-name",
+  "version": "1.0.0",
+  "description": "플러그인 설명을 여기에 작성",
+  "author": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "license": "MIT",
+  "keywords": ["keyword1", "keyword2"],
+
+  "commands": "./commands/",
+  "agents": "./agents/",
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json"
+}
