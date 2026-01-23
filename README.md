@@ -8,7 +8,7 @@
 
 ```bash
 # GitHub에 push 후
-/plugin marketplace add harry/claude-plugin
+/plugin marketplace add harry-jk/claude-plugin
 
 # 또는 로컬에서 테스트
 /plugin marketplace add /path/to/claude-plugin
