@@ -2,12 +2,21 @@
   "name": "harry-claude-plugins",
   "owner": {
     "name": "Harry",
-    "email": "harry@example.com"
+    "email": "jinhyeok.kang@gmail.com"
   },
   "metadata": {
     "description": "Harry's personal Claude Code plugin marketplace",
     "version": "1.0.0",
     "pluginRoot": "./plugins"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "exa",
+      "source": "./plugins/exa",
+      "description": "Exa AI search capabilities for Claude Code",
+      "version": "1.0.0",
+      "keywords": ["exa", "search", "mcp", "web-search", "research"],
+      "category": "search"
+    }
+  ]
 }

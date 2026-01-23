@@ -1,0 +1,11 @@
+{
+  "name": "exa",
+  "version": "1.0.0",
+  "description": "Exa AI search - Set EXA_API_KEY in ~/.claude/settings.json env section",
+  "author": {
+    "name": "Harry"
+  },
+  "license": "MIT",
+  "keywords": ["exa", "search", "mcp", "web-search", "research"],
+  "mcpServers": "./.mcp.json"
+}
