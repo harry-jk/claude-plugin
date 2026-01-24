@@ -25,6 +25,14 @@
       "version": "1.0.0",
       "keywords": ["thinking", "reasoning", "problem-solving", "mcp"],
       "category": "reasoning"
+    },
+    {
+      "name": "codex",
+      "source": "./plugins/codex",
+      "description": "OpenAI Codex shell tool",
+      "version": "1.0.0",
+      "keywords": ["codex", "openai", "shell", "mcp"],
+      "category": "coding"
     }
   ]
 }

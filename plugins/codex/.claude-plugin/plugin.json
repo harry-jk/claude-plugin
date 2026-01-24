@@ -1,0 +1,11 @@
+{
+  "name": "codex",
+  "version": "1.0.0",
+  "description": "OpenAI Codex MCP server (official) - Requires codex login",
+  "author": {
+    "name": "Harry"
+  },
+  "license": "MIT",
+  "keywords": ["codex", "openai", "ai-assistant", "code-review", "mcp"],
+  "mcpServers": "./.mcp.json"
+}
