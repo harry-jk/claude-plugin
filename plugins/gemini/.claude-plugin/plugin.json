@@ -1,0 +1,11 @@
+{
+  "name": "gemini",
+  "version": "1.0.0",
+  "description": "Google Gemini MCP server - OAuth login with Google account (no API key required)",
+  "author": {
+    "name": "Harry"
+  },
+  "license": "MIT",
+  "keywords": ["gemini", "google", "ai-assistant", "mcp", "oauth"],
+  "mcpServers": "./.mcp.json"
+}

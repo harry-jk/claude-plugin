@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gemini": {
+      "command": "npx",
+      "args": ["-y", "@jacob/gemini-cli-mcp"]
+    }
+  }
+}
