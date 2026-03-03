@@ -1,0 +1,11 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "description": "Git repository management - version control tools",
+  "author": {
+    "name": "Harry"
+  },
+  "license": "MIT",
+  "keywords": ["git", "version-control", "scm", "mcp", "repository"],
+  "mcpServers": "./.mcp.json"
+}
