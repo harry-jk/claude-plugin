@@ -1,0 +1,11 @@
+{
+  "name": "shadcn",
+  "version": "1.0.0",
+  "description": "shadcn/ui component library - search, browse, and install components",
+  "author": {
+    "name": "Harry"
+  },
+  "license": "MIT",
+  "keywords": ["shadcn", "ui", "components", "react", "mcp"],
+  "mcpServers": "./.mcp.json"
+}
