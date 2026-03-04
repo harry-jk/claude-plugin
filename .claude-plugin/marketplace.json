@@ -35,14 +35,6 @@
       "category": "coding"
     },
     {
-      "name": "gemini",
-      "source": "./plugins/gemini",
-      "description": "Google Gemini MCP server - OAuth login with Google account (no API key required)",
-      "version": "1.0.0",
-      "keywords": ["gemini", "google", "ai-assistant", "mcp", "oauth"],
-      "category": "ai-assistant"
-    },
-    {
       "name": "shadcn",
       "source": "./plugins/shadcn",
       "description": "shadcn/ui component library - search, browse, and install components",
