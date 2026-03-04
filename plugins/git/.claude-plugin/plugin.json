@@ -7,5 +7,6 @@
   },
   "license": "MIT",
   "keywords": ["git", "version-control", "scm", "mcp", "repository"],
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json"
 }

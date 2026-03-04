@@ -1,0 +1,17 @@
+{
+  "description": "Detect and prevent direct bash git commands, redirect to git MCP",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/detect-git.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
