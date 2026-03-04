@@ -33,6 +33,30 @@
       "version": "1.0.0",
       "keywords": ["codex", "openai", "shell", "mcp"],
       "category": "coding"
+    },
+    {
+      "name": "gemini",
+      "source": "./plugins/gemini",
+      "description": "Google Gemini MCP server - OAuth login with Google account (no API key required)",
+      "version": "1.0.0",
+      "keywords": ["gemini", "google", "ai-assistant", "mcp", "oauth"],
+      "category": "ai-assistant"
+    },
+    {
+      "name": "shadcn",
+      "source": "./plugins/shadcn",
+      "description": "shadcn/ui component library - search, browse, and install components",
+      "version": "1.0.0",
+      "keywords": ["shadcn", "ui", "components", "react", "mcp"],
+      "category": "ui"
+    },
+    {
+      "name": "git",
+      "source": "./plugins/git",
+      "description": "Git repository management with policy enforcement and hook-based bash prevention",
+      "version": "1.0.0",
+      "keywords": ["git", "version-control", "scm", "mcp", "repository"],
+      "category": "version-control"
     }
   ]
 }
