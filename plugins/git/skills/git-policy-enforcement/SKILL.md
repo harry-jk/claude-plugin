@@ -6,7 +6,7 @@ version: 0.1.0
 
 ## Purpose
 
-Enforce git policies defined by `git-policy-setup`. This skill automatically applies configured rules during git operations, ensuring consistent and compliant commits across the project.
+Enforce git policies defined by `/policy-setup`. This skill automatically applies configured rules during git operations, ensuring consistent and compliant commits across the project.
 
 ## When to Use
 
@@ -34,7 +34,7 @@ Before any git operation, load `.claude/git-policy.json`:
 }
 ```
 
-If file doesn't exist, guide user to run `git-policy-setup` first.
+If file doesn't exist, guide user to run `/policy-setup` first.
 
 ### Step 2: Auto-generate and Format Commit Message
 
@@ -238,7 +238,7 @@ Once all validations pass and confirmations received:
 Error: .claude/git-policy.json not found
 
 Action:
-1. Suggest running git-policy-setup
+1. Suggest running /policy-setup
 2. Offer to apply default policies
 3. Ask if user wants to proceed without enforcement
 ```

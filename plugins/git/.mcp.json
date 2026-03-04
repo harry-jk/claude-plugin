@@ -2,7 +2,10 @@
   "mcpServers": {
     "git": {
       "command": "npx",
-      "args": ["@cyanheads/git-mcp-server"]
+      "args": ["@cyanheads/git-mcp-server"],
+      "env": {
+        "LOGS_DIR": ".claude/logs/git-mcp-server"
+      }
     }
   }
 }

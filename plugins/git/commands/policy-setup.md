@@ -1,7 +1,6 @@
 ---
-name: Git Policy Setup
-description: This skill should be used when the user starts a new project, begins a new task, or asks to configure git policies. Helps define project-specific git rules and policies that will be enforced during development.
-version: 0.1.0
+description: Configure git policies for the current project (commit confirmation, message format, co-authored-by)
+allowed-tools: Read(.claude/git-policy.json), Write(.claude/git-policy.json), AskUserQuestion
 ---
 
 ## Purpose

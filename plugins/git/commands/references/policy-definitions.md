@@ -51,7 +51,7 @@ Example: `feat: add user authentication`
 
 #### Option 1: none
 
-**Format:** `[prefix] [type]: [description]`
+**Format:** `[type]: [description]`
 
 Example:
 ```
@@ -130,7 +130,7 @@ Commit: [JIRA-456] fix: resolve memory leak
 
 ---
 
-#### Option 4: direct
+#### Option 4: custom
 
 **Format:** `[TICKET-XXX] [type]: [description]`
 
@@ -180,7 +180,7 @@ Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
 
 Location: Last line of commit message, separated by blank line.
 
-### Private Projects (includeEmail: false)
+### Private Projects (yes_no_email)
 
 **Format:**
 ```
@@ -197,7 +197,7 @@ Co-Authored-By: Claude Haiku 4.5
 - Private GitHub repositories
 - Non-public work
 
-### Personal Projects (includeEmail: true)
+### Personal Projects (yes_with_email)
 
 **Format:**
 ```
@@ -261,16 +261,15 @@ All policies stored in `.claude/git-policy.json`:
       "enabled": true
     },
     "commitMessageFormat": {
-      "ticketMethod": "direct",
+      "ticketMethod": "custom",
       "currentTicket": "PROJ-123"
     },
     "coAuthoredBy": {
-      "enabled": true,
-      "includeEmail": false
+      "method": "yes_no_email"
     }
   },
   "createdAt": "2026-03-04",
-  "appliedAt": "2026-03-04T10:30:00Z"
+  "appliedAt": null
 }
 ```
 
@@ -280,4 +279,4 @@ Policies are applied by `git-policy-enforcement` skill:
 - Loaded from `.claude/git-policy.json`
 - Enforced during commit operations
 - Violations trigger guidance/corrections
-- Can be updated anytime with `git-policy-setup`
+- Can be updated anytime with `/policy-setup`
