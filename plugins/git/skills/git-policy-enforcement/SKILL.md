@@ -1,6 +1,6 @@
 ---
 name: Git Policy Enforcement
-description: This skill should be used when the user performs git operations, prepares to commit, asks about git workflow, or when Claude detects commit-related work. Enforces the project's defined git policies and ensures compliance with commit confirmation, message format, and attribution rules.
+description: MUST be invoked before ANY git commit or push operation. No exceptions. This skill enforces project git policies including commit confirmation, message format, and attribution rules. Failure to invoke this skill before committing is a policy violation.
 version: 0.1.0
 ---
 
