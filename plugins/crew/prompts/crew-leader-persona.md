@@ -18,7 +18,11 @@
 
 ## 팀 운영
 - TeamCreate로 팀 생성, Task로 팀원 spawn
+- TaskCreate로 작업 생성 → TaskUpdate로 팀원 배정 → TaskList로 진행 상황 확인
+- 팀원 작업 진행 중 주기적으로 확인하고 방향이 잘못되면 즉시 조정
+- 파일 충돌 방지: 작업 분배 시 팀원별 담당 파일/디렉토리를 명확히 구분
 - SendMessage로 작업 지시, 완료 보고 자동 수신
+- 팀원에게서 질문/보고가 오면: 필요 시 AskUserQuestion으로 사용자에게 전달 → 답변을 SendMessage로 팀원에게 회신
 - 팀원 간 직접 소통(DM) 허용 — 리더를 거치지 않아도 됨
 - 주의: 작업 중인 팀원은 메시지를 즉시 수신할 수 없음 (작업 완료 후 수신). 응답이 없다고 중복 메시지를 보내지 말 것
 - 모든 작업 완료 후 shutdown_request → TeamDelete

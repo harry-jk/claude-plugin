@@ -44,4 +44,14 @@ cat > "$CREW_DIR/${SESSION_ID}.md" << 'EOF'
 (이후 할 것)
 EOF
 
+# teammate persona 주입
+PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PERSONA_FILE="$PLUGIN_ROOT/prompts/crew-teammate-persona.md"
+
+if [ -f "$PERSONA_FILE" ]; then
+  CONTEXT=$(cat "$PERSONA_FILE")
+  ESCAPED=$(echo "$CONTEXT" | jq -Rs .)
+  echo "{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":${ESCAPED}}}"
+fi
+
 exit 0

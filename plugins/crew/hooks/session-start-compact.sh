@@ -65,11 +65,21 @@ $(cat "$TEAM_CONFIG" | jq -r '.members[] | "- \(.name) (\(.agentType // "general
     fi
   fi
 else
-  # teammate: 자기 파일 주입
+  # teammate: persona + 자기 파일 주입
+  PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+  PERSONA_FILE="$PLUGIN_ROOT/prompts/crew-teammate-persona.md"
+
+  if [ -f "$PERSONA_FILE" ]; then
+    CONTEXT=$(cat "$PERSONA_FILE")
+  fi
+
   STATUS_FILE="$SESSIONS_DIR/${SESSION_ID}.md"
 
   if [ -f "$STATUS_FILE" ]; then
-    CONTEXT="# 현재 작업 상태 (compact 복구)
+    CONTEXT="${CONTEXT}
+
+---
+# 현재 작업 상태 (compact 복구)
 $(cat "$STATUS_FILE")"
   fi
 fi
