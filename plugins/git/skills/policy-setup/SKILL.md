@@ -1,6 +1,13 @@
 ---
 description: Configure git policies for the current project (commit confirmation, message format, co-authored-by)
-allowed-tools: Read(.claude/git-policy.json), Write(.claude/git-policy.json), AskUserQuestion
+allowed-tools: Read, Write, AskUserQuestion
+hooks:
+  PreToolUse:
+    - matcher: "Write"
+      hooks:
+        - type: command
+          command: "${CLAUDE_PLUGIN_ROOT}/hooks/allow-policy-write.sh"
+          timeout: 5
 ---
 
 ## Purpose

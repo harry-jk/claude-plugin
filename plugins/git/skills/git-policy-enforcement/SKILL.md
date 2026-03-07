@@ -1,6 +1,6 @@
 ---
 name: Git Policy Enforcement
-description: MUST be invoked before ANY git commit or push operation. No exceptions. This skill enforces project git policies including commit confirmation, message format, and attribution rules. Failure to invoke this skill before committing is a policy violation.
+description: Enforces git commit policies (message format, confirmation, attribution). Use when user says "commit", "커밋", "커밋 해줘", "커밋 진행", asks to commit changes, or when preparing a git commit or push.
 version: 0.1.0
 ---
 
