@@ -49,6 +49,14 @@
       "version": "1.0.0",
       "keywords": ["git", "version-control", "scm", "mcp", "repository"],
       "category": "version-control"
+    },
+    {
+      "name": "crew",
+      "source": "./plugins/crew",
+      "description": "Team lead orchestration - persona injection, status tracking, teammate coordination",
+      "version": "1.0.0",
+      "keywords": ["team", "crew", "leader", "orchestration", "persona", "status-tracking"],
+      "category": "orchestration"
     }
   ]
 }
