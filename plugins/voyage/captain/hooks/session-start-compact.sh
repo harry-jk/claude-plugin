@@ -1,20 +1,20 @@
 #!/bin/bash
 # SessionStart(compact) hook: context 복구
-# 리더 → persona + leader.md 주입
-# teammate → 자기 sessions/{session_id}.md 주입
+# captain → persona + captain.md 주입
+# teammate → persona + 자기 logs/{session_id}.md 주입
 
 INPUT=$(cat)
 SESSION_ID=$(echo "$INPUT" | jq -r '.session_id // empty')
-CREW_DIR="$CLAUDE_PROJECT_DIR/.claude/crew"
-SESSIONS_DIR="$CREW_DIR/sessions"
+VOYAGE_DIR="$CLAUDE_PROJECT_DIR/.claude/voyage"
+LOGS_DIR="$VOYAGE_DIR/logs"
 
-# crew 디렉토리가 없으면 스킵
-if [ ! -d "$SESSIONS_DIR" ]; then
+# voyage 디렉토리가 없으면 스킵
+if [ ! -d "$LOGS_DIR" ]; then
   exit 0
 fi
 
-# leader-session 파일이 없으면 스킵
-LEAD_FILE="$SESSIONS_DIR/leader-session"
+# captain-session 파일이 없으면 스킵
+LEAD_FILE="$LOGS_DIR/captain-session"
 if [ ! -f "$LEAD_FILE" ]; then
   exit 0
 fi
@@ -23,11 +23,11 @@ LEAD_SESSION=$(cat "$LEAD_FILE")
 CONTEXT=""
 
 if [ "$SESSION_ID" = "$LEAD_SESSION" ]; then
-  # 리더: persona + leader.md 주입
+  # captain: persona + captain.md 주입
   PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-  PERSONA_BASE="$PLUGIN_ROOT/prompts/crew-leader-persona.md"
-  PERSONA_PROJECT="$CREW_DIR/prompts/team-lead-persona.md"
-  STATUS_FILE="$SESSIONS_DIR/leader.md"
+  PERSONA_BASE="$PLUGIN_ROOT/prompts/captain-persona.md"
+  PERSONA_PROJECT="$VOYAGE_DIR/prompts/captain-persona.md"
+  STATUS_FILE="$LOGS_DIR/captain.md"
 
   if [ -f "$PERSONA_BASE" ]; then
     CONTEXT=$(cat "$PERSONA_BASE")
@@ -48,7 +48,7 @@ $(cat "$STATUS_FILE")"
   fi
 
   # 팀 정보 복구
-  TEAM_NAME_FILE="$SESSIONS_DIR/team-name"
+  TEAM_NAME_FILE="$LOGS_DIR/team-name"
   if [ -f "$TEAM_NAME_FILE" ]; then
     TEAM_NAME=$(cat "$TEAM_NAME_FILE")
     TEAM_CONFIG="$HOME/.claude/teams/${TEAM_NAME}/config.json"
@@ -67,13 +67,13 @@ $(cat "$TEAM_CONFIG" | jq -r '.members[] | "- \(.name) (\(.agentType // "general
 else
   # teammate: persona + 자기 파일 주입
   PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-  PERSONA_FILE="$PLUGIN_ROOT/prompts/crew-teammate-persona.md"
+  PERSONA_FILE="$PLUGIN_ROOT/prompts/crew-persona.md"
 
   if [ -f "$PERSONA_FILE" ]; then
     CONTEXT=$(cat "$PERSONA_FILE")
   fi
 
-  STATUS_FILE="$SESSIONS_DIR/${SESSION_ID}.md"
+  STATUS_FILE="$LOGS_DIR/${SESSION_ID}.md"
 
   if [ -f "$STATUS_FILE" ]; then
     CONTEXT="${CONTEXT}

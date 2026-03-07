@@ -1,10 +1,10 @@
 {
-  "name": "crew",
+  "name": "voyage",
   "version": "1.0.0",
   "description": "Team lead orchestration - persona injection, status tracking, teammate coordination",
   "author": {
     "name": "Harry"
   },
   "license": "MIT",
-  "keywords": ["team", "crew", "leader", "orchestration", "persona", "status-tracking"]
+  "keywords": ["team", "voyage", "captain", "leader", "orchestration", "persona", "status-tracking"]
 }

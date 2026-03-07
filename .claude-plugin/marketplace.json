@@ -51,11 +51,11 @@
       "category": "version-control"
     },
     {
-      "name": "crew",
-      "source": "./plugins/crew",
+      "name": "voyage",
+      "source": "./plugins/voyage/captain",
       "description": "Team lead orchestration - persona injection, status tracking, teammate coordination",
       "version": "1.0.0",
-      "keywords": ["team", "crew", "leader", "orchestration", "persona", "status-tracking"],
+      "keywords": ["team", "voyage", "captain", "leader", "orchestration", "persona", "status-tracking"],
       "category": "orchestration"
     }
   ]

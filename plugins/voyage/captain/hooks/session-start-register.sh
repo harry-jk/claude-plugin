@@ -1,31 +1,31 @@
 #!/bin/bash
 # SessionStart(startup) hook: teammate 파일 등록
-# 팀 활성 상태에서 리더가 아닌 세션이 시작되면 sessions/{session_id}.md 생성
+# 팀 활성 상태에서 captain이 아닌 세션이 시작되면 logs/{session_id}.md 생성
 
 INPUT=$(cat)
 SESSION_ID=$(echo "$INPUT" | jq -r '.session_id // empty')
 
 [ -z "$SESSION_ID" ] && exit 0
 
-CREW_DIR="$CLAUDE_PROJECT_DIR/.claude/crew/sessions"
+LOGS_DIR="$CLAUDE_PROJECT_DIR/.claude/voyage/logs"
 
-# crew 디렉토리가 없으면 스킵 (crew 미사용)
-[ ! -d "$CREW_DIR" ] && exit 0
+# voyage 디렉토리가 없으면 스킵 (voyage 미사용)
+[ ! -d "$LOGS_DIR" ] && exit 0
 
-# leader-session 파일이 없으면 스킵 (팀 비활성)
-LEAD_FILE="$CREW_DIR/leader-session"
+# captain-session 파일이 없으면 스킵 (팀 비활성)
+LEAD_FILE="$LOGS_DIR/captain-session"
 [ ! -f "$LEAD_FILE" ] && exit 0
 
 LEAD_SESSION=$(cat "$LEAD_FILE")
 
-# 리더 세션이면 스킵 (리더 등록은 crew-leader skill이 처리)
+# captain 세션이면 스킵 (captain 등록은 take-helm skill이 처리)
 [ "$SESSION_ID" = "$LEAD_SESSION" ] && exit 0
 
 # 이미 파일이 있으면 스킵
-[ -f "$CREW_DIR/${SESSION_ID}.md" ] && exit 0
+[ -f "$LOGS_DIR/${SESSION_ID}.md" ] && exit 0
 
 # teammate 상태 파일 초기 생성
-cat > "$CREW_DIR/${SESSION_ID}.md" << 'EOF'
+cat > "$LOGS_DIR/${SESSION_ID}.md" << 'EOF'
 # 작업 현황
 
 ## 목표
@@ -46,7 +46,7 @@ EOF
 
 # teammate persona 주입
 PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PERSONA_FILE="$PLUGIN_ROOT/prompts/crew-teammate-persona.md"
+PERSONA_FILE="$PLUGIN_ROOT/prompts/crew-persona.md"
 
 if [ -f "$PERSONA_FILE" ]; then
   CONTEXT=$(cat "$PERSONA_FILE")
